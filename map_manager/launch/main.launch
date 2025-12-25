@@ -1,0 +1,6 @@
+<launch>
+    <!-- 启动 main_demo.py 节点 -->
+    <node name="map_manager" pkg="map_manager" type="main_demo.py" output="screen"/>
+</launch>
+
+

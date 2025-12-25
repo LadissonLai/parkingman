@@ -268,4 +268,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
+备注.md
+
 
