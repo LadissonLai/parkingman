@@ -1,0 +1,5 @@
+<launch>
+    <node name="space_detect_and_tf_to_map" pkg="perception" type="space_detect_and_tf_to_map.py" output="screen">
+        <param name="model_path" value="$(find perception)/weights/yolo_obb_best.pt"/>
+    </node>
+</launch>

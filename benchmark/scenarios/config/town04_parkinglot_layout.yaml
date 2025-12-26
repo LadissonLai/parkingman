@@ -1,0 +1,602 @@
+carla_parking_space_config:
+  - id: "2-16"
+    blueprint: "vehicle.carlamotors.carlacola"
+    spawn: true
+    # 按照carla的左手坐标系记录的，方便carla api调用
+    transform:
+      location:
+        x: 291.04
+        y: -188.37
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: -178.0
+  - id: "2-15"
+    blueprint: "vehicle.ford.mustang"
+    spawn: true
+    transform:
+      location:
+        x: 291.04
+        y: -191.62
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 179.0
+  - id: "2-13"
+    blueprint: "vehicle.carlamotors.carlacola"
+    spawn: true
+    transform:
+      location:
+        x: 291.01
+        y: -197.86
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: -178.0
+  - id: "2-12"
+    blueprint: "vehicle.tesla.cybertruck"
+    spawn: true
+    transform:
+      location:
+        x: 291.18
+        y: -200.99
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: -180.0
+  - id: "2-11"
+    blueprint: "vehicle.carlamotors.carlacola"
+    spawn: false
+    transform:
+      location:
+        x: 291.04
+        y: -204.42
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: -180.0
+  - id: "2-9"
+    blueprint: "vehicle.audi.a2"
+    spawn: true
+    transform:
+      location:
+        x: 290.91
+        y: -210.76
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 180.0
+  - id: "2-8"
+    blueprint: "vehicle.carlamotors.carlacola"
+    spawn: true
+    transform:
+      location:
+        x: 290.88
+        y: -213.95
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: -180.0
+  - id: "2-6"
+    blueprint: "vehicle.mini.cooper_s_2021"
+    spawn: true
+    transform:
+      location:
+        x: 291.06
+        y: -220.16
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: -180.0
+  - id: "2-5"
+    blueprint: "vehicle.carlamotors.carlacola"
+    spawn: true
+    transform:
+      location:
+        x: 291.24
+        y: -223.27
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: -180.0
+  - id: "2-4"
+    blueprint: "vehicle.dodge.charger_police"
+    spawn: true
+    transform:
+      location:
+        x: 291.28
+        y: -226.39
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: -180.0
+  - id: "2-3"
+    blueprint: "vehicle.nissan.patrol_2021"
+    spawn: true
+    transform:
+      location:
+        x: 291.00
+        y: -229.44
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: -180.0
+  - id: "2-2"
+    blueprint: "vehicle.mini.cooper_s_2021"
+    spawn: true
+    transform:
+      location:
+        x: 291.04
+        y: -232.75
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: -180.0
+  - id: "2-1"
+    blueprint: "vehicle.volkswagen.t2_2021"
+    spawn: true
+    transform:
+      location:
+        x: 291.19
+        y: -235.64
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 179.0
+  - id: "3-1"
+    blueprint: "vehicle.nissan.patrol_2021"
+    spawn: true
+    transform:
+      location:
+        x: 280.02
+        y: -235.78
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "3-2"
+    blueprint: "vehicle.dodge.charger_police"
+    spawn: true
+    transform:
+      location:
+        x: 280.19
+        y: -232.70
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "3-4"
+    blueprint: "vehicle.mini.cooper_s_2021"
+    spawn: true
+    transform:
+      location:
+        x: 279.86
+        y: -226.29
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "3-5"
+    blueprint: "vehicle.mercedes.coupe_2020"
+    spawn: true
+    transform:
+      location:
+        x: 279.96
+        y: -223.17
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "3-6"
+    blueprint: "vehicle.ford.crown"
+    spawn: false
+    transform:
+      location:
+        x: 279.96
+        y: -220.08
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "3-7"
+    blueprint: "vehicle.dodge.charger_police"
+    spawn: true
+    transform:
+      location:
+        x: 279.96
+        y: -217.02
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "3-8"
+    blueprint: "vehicle.tesla.cybertruck"
+    spawn: true
+    transform:
+      location:
+        x: 279.96
+        y: -213.88
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "3-9"
+    blueprint: "vehicle.mercedes.coupe_2020"
+    spawn: true
+    transform:
+      location:
+        x: 279.96
+        y: -210.66
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "3-10"
+    blueprint: "vehicle.nissan.micra"
+    spawn: true
+    transform:
+      location:
+        x: 279.96
+        y: -207.33
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "3-11"
+    blueprint: "vehicle.volkswagen.t2_2021"
+    spawn: true
+    transform:
+      location:
+        x: 279.96
+        y: -204.14
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "3-12"
+    blueprint: "vehicle.lincoln.mkz_2020"
+    spawn: true
+    transform:
+      location:
+        x: 279.96
+        y: -200.83
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "3-13"
+    blueprint: "vehicle.dodge.charger_police"
+    spawn: true
+    transform:
+      location:
+        x: 279.96
+        y: -197.80
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "3-14"
+    blueprint: "vehicle.nissan.micra"
+    spawn: true
+    transform:
+      location:
+        x: 279.20
+        y: -194.71
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "3-15"
+    blueprint: "vehicle.volkswagen.t2_2021"
+    spawn: true
+    transform:
+      location:
+        x: 279.96
+        y: -191.43
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "4-16"
+    blueprint: "vehicle.tesla.cybertruck"
+    spawn: true
+    transform:
+      location:
+        x: 272.82
+        y: -187.99
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: -180.0
+  - id: "4-14"
+    blueprint: "vehicle.dodge.charger_police"
+    spawn: true
+    transform:
+      location:
+        x: 272.79
+        y: -194.75
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: -180.0
+  - id: "4-12"
+    blueprint: "vehicle.volkswagen.t2_2021"
+    spawn: true
+    transform:
+      location:
+        x: 272.79
+        y: -201.20
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 180.0
+  - id: "4-11"
+    blueprint: "vehicle.nissan.patrol_2021"
+    spawn: true
+    transform:
+      location:
+        x: 272.79
+        y: -204.42
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 180.0
+  - id: "4-10"
+    blueprint: "vehicle.dodge.charger_2020"
+    spawn: true
+    transform:
+      location:
+        x: 272.79
+        y: -207.55
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 180.0
+  - id: "4-7"
+    blueprint: "vehicle.mercedes.coupe"
+    spawn: true
+    transform:
+      location:
+        x: 272.79
+        y: -217.08
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 180.0
+  - id: "4-6"
+    blueprint: "vehicle.nissan.micra"
+    spawn: true
+    transform:
+      location:
+        x: 272.79
+        y: -220.30
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 180.0
+  - id: "4-5"
+    blueprint: "vehicle.audi.tt"
+    spawn: true
+    transform:
+      location:
+        x: 272.79
+        y: -223.37
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 180.0
+  - id: "4-4"
+    blueprint: "vehicle.mini.cooper_s"
+    spawn: true
+    transform:
+      location:
+        x: 272.79
+        y: -226.53
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 180.0
+  - id: "4-3"
+    blueprint: "vehicle.audi.tt"
+    spawn: true
+    transform:
+      location:
+        x: 272.79
+        y: -229.64
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 180.0
+  - id: "4-1"
+    blueprint: "vehicle.dodge.charger_2020"
+    spawn: true
+    transform:
+      location:
+        x: 272.79
+        y: -235.91
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 180.0
+  - id: "1-1"
+    blueprint: "vehicle.nissan.patrol_2021"
+    spawn: true
+    transform:
+      location:
+        x: 298.30
+        y: -235.71
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "1-4"
+    blueprint: "vehicle.tesla.cybertruck"
+    spawn: true
+    transform:
+      location:
+        x: 298.30
+        y: -226.42
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "1-5"
+    blueprint: "vehicle.mercedes.coupe_2020"
+    spawn: true
+    transform:
+      location:
+        x: 298.30
+        y: -223.40
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "1-6"
+    blueprint: "vehicle.ford.crown"
+    spawn: true
+    transform:
+      location:
+        x: 298.30
+        y: -220.18
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "1-7"
+    blueprint: "vehicle.mercedes.coupe"
+    spawn: true
+    transform:
+      location:
+        x: 298.30
+        y: -217.17
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: -0.0
+  - id: "1-8"
+    blueprint: "vehicle.toyota.prius"
+    spawn: true
+    transform:
+      location:
+        x: 298.30
+        y: -214.03
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "1-9"
+    blueprint: "vehicle.nissan.patrol_2021"
+    spawn: true
+    transform:
+      location:
+        x: 298.30
+        y: -210.75
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "1-10"
+    blueprint: "vehicle.tesla.model3"
+    spawn: true
+    transform:
+      location:
+        x: 298.30
+        y: -207.47
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "1-11"
+    blueprint: "vehicle.ford.crown"
+    spawn: true
+    transform:
+      location:
+        x: 298.30
+        y: -204.29
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "1-12"
+    blueprint: "vehicle.mini.cooper_s"
+    spawn: true
+    transform:
+      location:
+        x: 298.30
+        y: -201.19
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "1-13"
+    blueprint: "vehicle.mercedes.coupe"
+    spawn: true
+    transform:
+      location:
+        x: 298.30
+        y: -197.91
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+  - id: "1-16"
+    blueprint: "vehicle.nissan.micra"
+    spawn: true
+    transform:
+      location:
+        x: 298.30
+        y: -188.21
+        z: 0.2
+      rotation:
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
