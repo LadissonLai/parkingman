@@ -1,6 +1,5 @@
 <RoadNet>
     <nodes>
-        <!-- 属性 p="x y z theta" (单位: 米, 米, 米, 角度) -->
         <n id="1" p="286.64 191.83 0.25 90.42" />
         <n id="2" p="286.52 209.31 0.32 90.44" />
         <n id="3" p="286.35 232.73 0.17 90.44" /> 
@@ -31,7 +30,6 @@
     </nodes>
 
     <ways>
-        <!-- type 枚举: Straight, LeftTurn, RightTurn -->
         <w id="101" nodes="1 2 3" type="Straight" />
         <w id="102" nodes="3 4 5" type="LeftTurn" />
         <w id="103" nodes="5 6" type="Straight" />

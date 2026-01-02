@@ -1,0 +1,8 @@
+<launch>
+    <node name="global_vehicle_desc_mapper" pkg="perception" type="vehicle_detect_and_map.py" output="screen">
+        <param name="role_name" value="ego_vehicle"/>
+        <param name="host" value="localhost"/>
+        <param name="port" value="2000"/>
+        <param name="radius" value="10.0"/>
+    </node>
+</launch>

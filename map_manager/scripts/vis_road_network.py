@@ -166,5 +166,5 @@ def plot_static_map_optimized(road_map):
 if __name__ == "__main__":
     r_map = RoadMap()
     # r_map.load_from_string(xml_data)
-    r_map.load_from_file("static_map.xml")
+    r_map.load_from_file("town04_parkinglot.xml")
     plot_static_map_optimized(r_map)

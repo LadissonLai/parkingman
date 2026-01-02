@@ -1,0 +1,23 @@
+# 存储路径配置
+paths:
+  map_file: "/home/u20/codes/LLM_ws/src/LLMParking/map_manager/scripts/town04_parkinglot.xml"  # 确保路径相对于运行目录是正确的，或者写绝对路径
+  output_file: "dataset/T1/parking_session_T1_014.jsonl" # 数据集保存路径
+
+# 提示词与任务配置
+system:
+  instruction: "Park on the Right side of a White car."
+  # 只是为了Prompt中显示，实际路网从xml读取
+  entrance_coords: [285.05, 180.41, 0.26]
+  exit_coords: [284.69, 240.88, 0.16]
+
+# ROS 话题配置
+topics:
+  # 注意：这里需要根据你实际的消息包名修改
+  ego_odom: "/carla/ego_vehicle/odometry"
+  objects: "/perception/global_vehicle_description"
+  spaces: "/perception/global_parking_space_description"
+
+# 采集参数
+sampling:
+  # 最小记录间隔（防止手抖连按），单位秒
+  min_interval: 0.5
