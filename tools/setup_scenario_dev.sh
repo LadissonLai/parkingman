@@ -2,29 +2,29 @@
 
 HOST="127.0.0.1"
 PORT=2000
-LAYOUT_YAML="dataset_collector/config/town04_parkinglot_layout.yaml"
-SCENARIO_YAML="dataset_collector/config/low_density_clear_noon.yaml"
+LAYOUT_YAML="dataset_collector/config/town04_base_layout.yaml" # 定义所有车辆的布局
+SCENARIO_YAML="dataset_collector/config/custom_layout.yaml" # 配置无用，使用上面那个yaml，已经遗弃deprecated
 RANDOM_MODE="--random"
 FULL_MODE="--full-layout"
 
 # 1. random
-PROGRAM="python3 ./utils/scenario_generation_cleanup.py \
-    --host $HOST \
-    --port $PORT \
-    --layout $LAYOUT_YAML \
-    --scenario $SCENARIO_YAML \
-    --random \
-    --random-ratio 0.8 \
-    --output-config random_scenario.yaml"
-
-# 2. full mode
 # PROGRAM="python3 ./utils/scenario_generation_cleanup.py \
 #     --host $HOST \
 #     --port $PORT \
 #     --layout $LAYOUT_YAML \
 #     --scenario $SCENARIO_YAML \
-#     $FULL_MODE \
-#     --output-config full_scenario.yaml"
+#     --random \
+#     --random-ratio 0.8 \
+#     --output-config random_scenario.yaml"
+
+# 2. full mode
+PROGRAM="python3 ./utils/scenario_generation_cleanup.py \
+    --host $HOST \
+    --port $PORT \
+    --layout $LAYOUT_YAML \
+    --scenario $SCENARIO_YAML \
+    $FULL_MODE \
+    --output-config full_scenario.yaml"
 
 # 3. task scenario mode
 # PROGRAM="python3 ./utils/scenario_generation_cleanup.py \
