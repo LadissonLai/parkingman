@@ -1,7 +1,7 @@
 carla_parking_space_config:
 - id: 2-6
-  blueprint: vehicle.volkswagen.t2
-  spawn: true
+  blueprint: vehicle.nissan.micra
+  spawn: false
   transform:
     location:
       x: 291.06
@@ -12,7 +12,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: -180.0
 - id: 1-4
-  blueprint: vehicle.ford.mustang
+  blueprint: vehicle.mercedes.coupe_2020
   spawn: true
   transform:
     location:
@@ -24,8 +24,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 3-12
-  blueprint: vehicle.volkswagen.t2_2021
-  spawn: true
+  blueprint: vehicle.chevrolet.impala
+  spawn: false
   transform:
     location:
       x: 279.96
@@ -36,8 +36,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 3-7
-  blueprint: vehicle.carlamotors.carlacola
-  spawn: true
+  blueprint: vehicle.tesla.model3
+  spawn: false
   transform:
     location:
       x: 279.96
@@ -48,7 +48,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 3-1
-  blueprint: vehicle.mercedes.coupe_2020
+  blueprint: vehicle.jeep.wrangler_rubicon
   spawn: true
   transform:
     location:
@@ -60,7 +60,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 1-5
-  blueprint: vehicle.dodge.charger_2020
+  blueprint: vehicle.audi.a2
   spawn: true
   transform:
     location:
@@ -72,8 +72,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 1-12
-  blueprint: vehicle.volkswagen.t2
-  spawn: false
+  blueprint: vehicle.dodge.charger_police_2020
+  spawn: true
   transform:
     location:
       x: 298.3
@@ -84,8 +84,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 2-16
-  blueprint: vehicle.bmw.grandtourer
-  spawn: true
+  blueprint: vehicle.mini.cooper_s
+  spawn: false
   transform:
     location:
       x: 291.04
@@ -96,7 +96,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: -178.0
 - id: 2-4
-  blueprint: vehicle.mini.cooper_s_2021
+  blueprint: vehicle.dodge.charger_2020
   spawn: true
   transform:
     location:
@@ -108,7 +108,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: -180.0
 - id: 3-8
-  blueprint: vehicle.toyota.prius
+  blueprint: vehicle.mini.cooper_s
   spawn: true
   transform:
     location:
@@ -120,8 +120,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 3-5
-  blueprint: vehicle.mini.cooper_s
-  spawn: false
+  blueprint: vehicle.audi.a2
+  spawn: true
   transform:
     location:
       x: 279.96
@@ -132,7 +132,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 2-9
-  blueprint: vehicle.carlamotors.carlacola
+  blueprint: vehicle.mini.cooper_s_2021
   spawn: true
   transform:
     location:
@@ -144,7 +144,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 180.0
 - id: 3-11
-  blueprint: vehicle.ford.mustang
+  blueprint: vehicle.seat.leon
   spawn: true
   transform:
     location:
@@ -156,8 +156,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 4-4
-  blueprint: vehicle.nissan.micra
-  spawn: false
+  blueprint: vehicle.ford.mustang
+  spawn: true
   transform:
     location:
       x: 272.79
@@ -168,7 +168,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 180.0
 - id: 3-13
-  blueprint: vehicle.bmw.grandtourer
+  blueprint: vehicle.citroen.c3
   spawn: true
   transform:
     location:
@@ -180,7 +180,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 4-12
-  blueprint: vehicle.dodge.charger_police
+  blueprint: vehicle.audi.a2
   spawn: true
   transform:
     location:
@@ -192,7 +192,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 180.0
 - id: 3-9
-  blueprint: vehicle.seat.leon
+  blueprint: vehicle.dodge.charger_police_2020
   spawn: true
   transform:
     location:
@@ -204,7 +204,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 1-6
-  blueprint: vehicle.jeep.wrangler_rubicon
+  blueprint: vehicle.volkswagen.t2
   spawn: true
   transform:
     location:
@@ -216,7 +216,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 2-15
-  blueprint: vehicle.audi.etron
+  blueprint: vehicle.nissan.patrol_2021
   spawn: true
   transform:
     location:
@@ -228,7 +228,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 179.0
 - id: 4-6
-  blueprint: vehicle.dodge.charger_2020
+  blueprint: vehicle.chevrolet.impala
   spawn: true
   transform:
     location:
@@ -240,8 +240,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 180.0
 - id: 1-11
-  blueprint: vehicle.volkswagen.t2
-  spawn: false
+  blueprint: vehicle.dodge.charger_2020
+  spawn: true
   transform:
     location:
       x: 298.3
@@ -252,8 +252,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 4-1
-  blueprint: vehicle.citroen.c3
-  spawn: true
+  blueprint: vehicle.audi.a2
+  spawn: false
   transform:
     location:
       x: 272.79
@@ -264,7 +264,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 180.0
 - id: 1-8
-  blueprint: vehicle.chevrolet.impala
+  blueprint: vehicle.nissan.patrol
   spawn: true
   transform:
     location:
@@ -288,7 +288,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 1-9
-  blueprint: vehicle.mercedes.coupe_2020
+  blueprint: vehicle.nissan.patrol_2021
   spawn: true
   transform:
     location:
@@ -300,8 +300,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 4-7
-  blueprint: vehicle.tesla.model3
-  spawn: true
+  blueprint: vehicle.seat.leon
+  spawn: false
   transform:
     location:
       x: 272.79
@@ -312,7 +312,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 180.0
 - id: 1-7
-  blueprint: vehicle.mini.cooper_s
+  blueprint: vehicle.mercedes.coupe_2020
   spawn: true
   transform:
     location:
@@ -324,8 +324,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: -0.0
 - id: 2-3
-  blueprint: vehicle.volkswagen.t2_2021
-  spawn: false
+  blueprint: vehicle.tesla.model3
+  spawn: true
   transform:
     location:
       x: 291.0
@@ -336,8 +336,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: -180.0
 - id: 4-16
-  blueprint: vehicle.bmw.grandtourer
-  spawn: false
+  blueprint: vehicle.audi.tt
+  spawn: true
   transform:
     location:
       x: 272.82
@@ -348,8 +348,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: -180.0
 - id: 1-10
-  blueprint: vehicle.dodge.charger_police_2020
-  spawn: true
+  blueprint: vehicle.mini.cooper_s
+  spawn: false
   transform:
     location:
       x: 298.3
@@ -360,8 +360,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 1-13
-  blueprint: vehicle.seat.leon
-  spawn: false
+  blueprint: vehicle.audi.a2
+  spawn: true
   transform:
     location:
       x: 298.3
@@ -372,7 +372,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 2-12
-  blueprint: vehicle.tesla.model3
+  blueprint: vehicle.seat.leon
   spawn: true
   transform:
     location:
@@ -384,8 +384,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: -180.0
 - id: 2-2
-  blueprint: vehicle.ford.crown
-  spawn: true
+  blueprint: vehicle.dodge.charger_police_2020
+  spawn: false
   transform:
     location:
       x: 291.04
@@ -396,7 +396,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: -180.0
 - id: 3-2
-  blueprint: vehicle.audi.etron
+  blueprint: vehicle.nissan.patrol_2021
   spawn: true
   transform:
     location:
@@ -408,8 +408,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 1-16
-  blueprint: vehicle.toyota.prius
-  spawn: false
+  blueprint: vehicle.ford.mustang
+  spawn: true
   transform:
     location:
       x: 298.3
@@ -420,7 +420,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 2-11
-  blueprint: vehicle.audi.a2
+  blueprint: vehicle.audi.etron
   spawn: true
   transform:
     location:
@@ -432,7 +432,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: -180.0
 - id: 3-6
-  blueprint: vehicle.dodge.charger_police_2020
+  blueprint: vehicle.jeep.wrangler_rubicon
   spawn: true
   transform:
     location:
@@ -444,8 +444,8 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 3-15
-  blueprint: vehicle.mini.cooper_s_2021
-  spawn: true
+  blueprint: vehicle.mercedes.coupe
+  spawn: false
   transform:
     location:
       x: 279.96
@@ -469,7 +469,7 @@ carla_parking_space_config:
       yaw: 180.0
 - id: 1-1
   blueprint: vehicle.citroen.c3
-  spawn: false
+  spawn: true
   transform:
     location:
       x: 298.3
@@ -480,7 +480,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 0.0
 - id: 4-5
-  blueprint: vehicle.mercedes.coupe_2020
+  blueprint: vehicle.dodge.charger_police_2020
   spawn: true
   transform:
     location:
@@ -492,7 +492,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 180.0
 - id: 2-13
-  blueprint: vehicle.ford.mustang
+  blueprint: vehicle.mini.cooper_s
   spawn: true
   transform:
     location:
@@ -504,7 +504,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: -178.0
 - id: 2-1
-  blueprint: vehicle.nissan.patrol
+  blueprint: vehicle.dodge.charger_police_2020
   spawn: true
   transform:
     location:
@@ -516,7 +516,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 179.0
 - id: 4-11
-  blueprint: vehicle.mini.cooper_s
+  blueprint: vehicle.dodge.charger_police_2020
   spawn: true
   transform:
     location:
@@ -528,7 +528,7 @@ carla_parking_space_config:
       pitch: 0.0
       yaw: 180.0
 - id: 4-14
-  blueprint: vehicle.volkswagen.t2
+  blueprint: vehicle.seat.leon
   spawn: true
   transform:
     location:

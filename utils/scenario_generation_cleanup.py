@@ -36,7 +36,8 @@ EXCLUDED_VEHICLE_BLUEPRINTS = [
     "vehicle.micro.microlino",
     "vehicle.tesla.cybertruck",
     "vehicle.ford.ambulance",
-    "vehicle.mercedes.sprinter"
+    "vehicle.mercedes.sprinter",
+    "vehicle.nissan.patrol_2021"
     # 你可以继续添加其他不想在随机场景中出现的车辆
 ]
 

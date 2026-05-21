@@ -9,7 +9,8 @@ import numpy as np
 import tf2_ros
 import tf2_geometry_msgs
 import tf_conversions
-from geometry_msgs.msg import PoseStamped, Pose
+from geometry_msgs.msg import PoseStamped, Pose, TransformStamped
+from nav_msgs.msg import Odometry
 from visualization_msgs.msg import Marker, MarkerArray
 import math
 from parking_space_msgs.msg import ParkingSpace, ParkingSpaceArray # 自定义消息类型
@@ -18,28 +19,39 @@ class ParkingSpaceDetector:
     def __init__(self):
         # ... (其他初始化代码保持不变) ...
         rospy.init_node('parking_space_detector', anonymous=True)
-        self.bev_resolution = rospy.get_param('~bev_resolution', 0.05) # 每像素代表的实际距离（单位：米/像素）
-        self.image_width = rospy.get_param('~image_width', 400)
-        self.image_height = rospy.get_param('~image_height', 400)
-        self.world_frame = rospy.get_param('~world_frame', 'parking_start_map')
-        self.vehicle_frame = rospy.get_param('~vehicle_frame', 'ego_vehicle')
+        self.bev_resolution = rospy.get_param('~bev_resolution', 0.003) # 每像素代表的实际距离（单位：米/像素）
+        self.image_width = rospy.get_param('~image_width', 1320)
+        self.image_height = rospy.get_param('~image_height', 989)
+        self.world_frame = rospy.get_param('~world_frame', 'camera_init') # fastlio default
+        self.vehicle_frame = rospy.get_param('~vehicle_frame', 'body') # fastlio default
         self.vis_parking_spaces = rospy.get_param('~vis_parking_spaces', True)
-        self.space_standard_width = rospy.get_param('~space_standard_width', 5.0)
-        self.spaec_standard_height = rospy.get_param('~spaec_standard_height', 3.0) # <--- 修正拼写错误
-        self.space_standard_area = self.space_standard_width * self.spaec_standard_height
-        model_path = rospy.get_param('~model_path', 'yolo-obb/runs/obb/train3/weights/best.pt')
+        self.space_standard_width = rospy.get_param('~space_standard_width', 0.7) # 车位的标准宽度（单位：米），根据实际情况调整，0.5米是一个示例值
+        self.space_standard_height = rospy.get_param('~space_standard_height', 0.7) # 车位的标准长度（单位：米），根据实际情况调整，0.5米是一个示例值
+        self.space_standard_area = self.space_standard_width * self.space_standard_height
+        model_path = rospy.get_param('~model_path', '/home/u20/codes/vlm-nav/yolo-obb/runs/obb/train8/weights/best.pt')
         self.model = YOLO(model_path)
         rospy.loginfo(f"YOLO-OBB model loaded from {model_path}")
+
         self.tf_buffer = tf2_ros.Buffer()
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer)
         rospy.loginfo("TF listener initialized.")
+
+        self.use_odom_fallback = rospy.get_param('~use_odom_fallback', False)
+        self.odom_topic = rospy.get_param('~odom_topic', '/Odometry')
+        self.latest_odom = None
+        if self.use_odom_fallback:
+            self.odom_sub = rospy.Subscriber(self.odom_topic, Odometry, self.odom_callback, queue_size=1)
+            rospy.loginfo(f"Subscribed to Odometry topic for TF fallback: {self.odom_topic}")
+
         self.bridge = CvBridge()
-        self.image_sub = rospy.Subscriber("/bev/image_stitched_hard", Image, self.image_callback, queue_size=1)
+        self.image_sub = rospy.Subscriber("/surround_bev/image", Image, self.image_callback, queue_size=1)
         self.marker_pub = rospy.Publisher("/parking_space_markers", MarkerArray, queue_size=10)
         self.parking_data_pub = rospy.Publisher("/parking_spaces_data", ParkingSpaceArray, queue_size=10)
         self.result_pub = rospy.Publisher("/parking_space_detections_image", Image, queue_size=10)
         rospy.loginfo("Parking space detector node is running.")
 
+    def odom_callback(self, msg):
+        self.latest_odom = msg
 
     def image_callback(self, data):
         rospy.loginfo_throttle(1.0, "Received image.")
@@ -51,14 +63,29 @@ class ParkingSpaceDetector:
 
         results = self.model(cv_image, verbose=False)
 
-        try:
-            transform = self.tf_buffer.lookup_transform(self.world_frame, 
-                                                        self.vehicle_frame, 
-                                                        data.header.stamp, 
-                                                        rospy.Duration(0.1))
-        except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
-            rospy.logwarn_throttle(1.0, f"TF transform not found from {self.vehicle_frame} to {self.world_frame}: {e}")
-            return
+        if self.use_odom_fallback:
+            if self.latest_odom is None:
+                rospy.logwarn_throttle(1.0, f"Waiting for Odometry fallback data on topic '{self.odom_topic}'...")
+                return
+
+            # 手动构造一个 TransformStamped 对象作为降级方案
+            transform = TransformStamped()
+            transform.header.stamp = data.header.stamp
+            transform.header.frame_id = self.world_frame
+            transform.child_frame_id = self.vehicle_frame
+            transform.transform.translation.x = self.latest_odom.pose.pose.position.x
+            transform.transform.translation.y = self.latest_odom.pose.pose.position.y
+            transform.transform.translation.z = self.latest_odom.pose.pose.position.z
+            transform.transform.rotation = self.latest_odom.pose.pose.orientation
+        else:
+            try:
+                transform = self.tf_buffer.lookup_transform(self.world_frame, 
+                                                            self.vehicle_frame, 
+                                                            data.header.stamp, 
+                                                            rospy.Duration(0.1))
+            except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
+                rospy.logwarn_throttle(1.0, f"TF transform not found from {self.vehicle_frame} to {self.world_frame}: {e}")
+                return
 
         marker_array = MarkerArray()
         parking_space_array_msg = ParkingSpaceArray()
@@ -86,7 +113,7 @@ class ParkingSpaceDetector:
                 if confidence < 0.6:
                     rospy.logwarn_throttle(1.0, f"Skipping low-confidence detection with confidence {confidence:.2f}.")
                     continue
-                rospy.loginfo(f"yolo-obb with center ({px}, {py}) with size ({w_px}, {h_px}) and rotation {math.degrees(r_rad):.2f} degree.")
+                #rospy.loginfo(f"yolo-obb with center ({px}, {py}) with size ({w_px}, {h_px}) and rotation {math.degrees(r_rad):.2f} degree.")
                 
                 # -- 像素坐标 -> 自车坐标系 (ego_vehicle) --
                 x_vehicle = (self.image_height / 2.0 - py) * self.bev_resolution
@@ -98,10 +125,10 @@ class ParkingSpaceDetector:
                 # [核心修正] 调整车辆坐标系下的偏航角
                 # ==============================================================================
                 # 逻辑修正：如果检测到的盒子“高”大于“宽”，说明它是个竖直车位，
-                if height_m > width_m:
-                    r_rad -= math.pi / 2.0
-                    # 同时，为了让CUBE Marker的尺寸正确匹配，交换宽高
-                    width_m, height_m = height_m, width_m
+                # if height_m > width_m:
+                #     r_rad -= math.pi / 2.0
+                #     # 同时，为了让CUBE Marker的尺寸正确匹配，交换宽高
+                #     width_m, height_m = height_m, width_m
                     
                 yaw_vehicle = -r_rad - (math.pi / 2.0)
                 
@@ -172,9 +199,9 @@ class ParkingSpaceDetector:
                 arrow_marker.pose = pose_stamped_world.pose # 姿态与CUBE完全相同
                 
                 # 箭头尺寸：长度2米，宽度0.2米，高度0.2米
-                arrow_marker.scale.x = 2.0 
-                arrow_marker.scale.y = 0.2
-                arrow_marker.scale.z = 0.2
+                arrow_marker.scale.x = 0.2
+                arrow_marker.scale.y = 0.1
+                arrow_marker.scale.z = 0.1
                 
                 # 箭头颜色：蓝色，不透明
                 arrow_marker.color.r = 0.0
@@ -188,7 +215,7 @@ class ParkingSpaceDetector:
                 marker_id += 1
 
         if parking_space_array_msg.spaces:
-            self.parking_data_pub.publish(parking_space_array_msg)
+            self.parking_data_pub.publish(parking_space_array_msg) # 发布到全局世界坐标系下面
             rospy.loginfo_throttle(1.0, f"Published {len(parking_space_array_msg.spaces)} parking spaces to data topic.")
 
         if self.vis_parking_spaces and len(marker_array.markers) > 1:
