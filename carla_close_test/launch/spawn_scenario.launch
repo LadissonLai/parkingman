@@ -1,0 +1,10 @@
+<launch>
+  <!-- 定义 YAML 文件路径作为可配置参数 -->
+  <arg name="yaml_path" default="$(find carla_close_test)/test_datasets/town04/2026-05-15-10-49/scenario_layout.yaml" />
+  <arg name="carla_host" default="127.0.0.1" />
+  <arg name="carla_port" default="2000" />
+
+  <!-- 启动场景生成节点 -->
+  <node pkg="carla_close_test" type="spawn_scenario.py" name="scenario_spawner" output="screen"
+        args="--yaml $(arg yaml_path) --host $(arg carla_host) --port $(arg carla_port)" />
+</launch>

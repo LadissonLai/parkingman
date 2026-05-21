@@ -1,0 +1,21 @@
+=== Closed-Loop Test Result ===
+Task:              2026-05-16-02-52
+Timestamp:         20260519_100228
+
+--- Conditions ---
+Timeout:           False
+Collision:         True
+Parking attempted: False
+
+--- Metrics ---
+Correct space:     True  (APE threshold: 3.00 m)
+Success (SR):      False
+SPL:               0.0000
+APE:               2.1360 m
+AOE:               87.0589 deg
+
+--- Details ---
+GT trajectory len: 19.1157 m
+Actual traj len:   12.0279 m
+GT final pos:      (279.9062, 194.8526) yaw=-0.0503 rad
+Final pos:         (281.8545, 195.7285) yaw=1.5718 rad
