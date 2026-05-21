@@ -1,0 +1,206 @@
+# 天气可选值: clear, cloudy, rain, fog
+# 时间可选值: morning, noon, evening, night
+weather:
+  - type: "clear"
+  - time: "noon"
+
+scenario_layout:
+  - id: "1-1"
+    spawn: true
+    blueprint: "vehicle.tesla.model3"
+
+  - id: "1-4"
+    spawn: true
+    blueprint: "vehicle.ford.mustang"
+
+  - id: "1-5"
+    spawn: true
+    blueprint: "default"
+
+  - id: "1-6"
+    spawn: true
+    blueprint: "default"
+
+  - id: "1-7"
+    spawn: true
+    blueprint: "default"
+
+  - id: "1-8"
+    spawn: true
+    blueprint: "default"
+
+  - id: "1-9"
+    spawn: true
+    blueprint: "default"
+
+  - id: "1-10"
+    spawn: true
+    blueprint: "default"
+
+  - id: "1-11"
+    spawn: true
+    blueprint: "default"
+
+  - id: "1-12"
+    spawn: true
+    blueprint: "default"
+
+  - id: "1-13"
+    spawn: true
+    blueprint: "default"
+
+  - id: "1-16"
+    spawn: true
+    blueprint: "default"
+
+  - id: "2-1"
+    spawn: true
+    blueprint: "default"
+
+  - id: "2-2"
+    spawn: true
+    blueprint: "default"
+
+  - id: "2-3"
+    spawn: true
+    blueprint: "default"
+
+  - id: "2-4"
+    spawn: true
+    blueprint: "default"
+
+  - id: "2-5"
+    spawn: true
+    blueprint: "default"
+
+  - id: "2-6"
+    spawn: true
+    blueprint: "default"
+
+  - id: "2-8"
+    spawn: false
+    blueprint: "default"
+
+  - id: "2-9"
+    spawn: false
+    blueprint: "default"
+
+  - id: "2-11"
+    spawn: true
+    blueprint: "default"
+
+  - id: "2-12"
+    spawn: true
+    blueprint: "default"
+
+  - id: "2-13"
+    spawn: true
+    blueprint: "default"
+
+  - id: "2-15"
+    spawn: true
+    blueprint: "default"
+
+  - id: "2-16"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-1"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-2"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-4"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-5"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-6"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-7"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-8"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-9"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-10"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-11"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-12"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-13"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-14"
+    spawn: true
+    blueprint: "default"
+
+  - id: "3-15"
+    spawn: true
+    blueprint: "default"
+
+  - id: "4-1"
+    spawn: true
+    blueprint: "default"
+
+  - id: "4-3"
+    spawn: true
+    blueprint: "default"
+
+  - id: "4-4"
+    spawn: true
+    blueprint: "default"
+
+  - id: "4-5"
+    spawn: true
+    blueprint: "default"
+
+  - id: "4-6"
+    spawn: true
+    blueprint: "default"
+
+  - id: "4-7"
+    spawn: true
+    blueprint: "default"
+
+  - id: "4-10"
+    spawn: true
+    blueprint: "default"
+
+  - id: "4-11"
+    spawn: true
+    blueprint: "default"
+
+  - id: "4-12"
+    spawn: true
+    blueprint: "default"
+
+  - id: "4-14"
+    spawn: true
+    blueprint: "default"
+
+  - id: "4-16"
+    spawn: true
+    blueprint: "default"

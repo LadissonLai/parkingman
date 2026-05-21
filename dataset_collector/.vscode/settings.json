@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/u20/codes/LLM_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/u20/codes/carla/CARLA_0.9.14/PythonAPI/carla",
+        "/home/u20/codes/carla/CARLA_0.9.14/PythonAPI"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/u20/codes/LLM_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/u20/codes/carla/CARLA_0.9.14/PythonAPI/carla",
+        "/home/u20/codes/carla/CARLA_0.9.14/PythonAPI"
+    ]
+}
