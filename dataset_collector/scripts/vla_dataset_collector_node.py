@@ -85,6 +85,7 @@ class VLADatasetCollector:
         self._busy:         bool = False   # guard re-entrant timer invocation
         self._frame_count:  int  = 0
         self._last_kf_pos        = None    # (x, y) of last saved keyframe
+        self._last_kf_yaw        = None    # yaw (rad) of last saved keyframe
         self._start_pose         = None    # (x, y, yaw_rad) at recording start
         self._output_dir:   str  = ""
         self._instruction:  str  = ""
@@ -139,14 +140,16 @@ class VLADatasetCollector:
         if odom is None:
             return
 
-        cx = odom.pose.pose.position.x
-        cy = odom.pose.pose.position.y
+        cx  = odom.pose.pose.position.x
+        cy  = odom.pose.pose.position.y
+        cyaw = quat_to_yaw(odom.pose.pose.orientation)
 
-        if not self._is_keyframe(cx, cy):
+        if not self._is_keyframe(cx, cy, cyaw):
             return
 
         self._busy        = True
         self._last_kf_pos = (cx, cy)
+        self._last_kf_yaw = cyaw
         self._frame_count += 1
         fnum = self._frame_count
 
@@ -162,11 +165,15 @@ class VLADatasetCollector:
 
     # ── keyframe test ─────────────────────────────────────────────────────
 
-    def _is_keyframe(self, x, y):
+    def _is_keyframe(self, x, y, yaw):
         if self._last_kf_pos is None:
             return True
         lx, ly = self._last_kf_pos
-        return math.hypot(x - lx, y - ly) > 0.1
+        dist = math.hypot(x - lx, y - ly)
+        yaw_diff = abs(yaw - self._last_kf_yaw)
+        if yaw_diff > math.pi:
+            yaw_diff = 2 * math.pi - yaw_diff
+        return dist > 0.1 or yaw_diff > math.radians(5.0)
 
     # ── per-keyframe recorders ────────────────────────────────────────────
 
